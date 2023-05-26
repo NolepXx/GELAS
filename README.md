@@ -1,23 +1,5 @@
 # ✭ PREMIUM CRACK
-#### Made With ❤️ By Dapunta  
-``` 
-Author :
-    • Dapunta Khurayra X
-  
-Team Project HEKER HEKER BIUTIPUL :
-    • Muhamad Rizal Fiansyah Id
-    • Angga Kurniawan
-    • Yayan XD
-    • Boy Hamzah
-    • Latip Harkat
-    • Zacky Tricker
-    • Sutan Ubay
-    • Rizky Dev
-    • Iqbal Dev
-    • Aap Afandi
-    • Fallen
-    • Hanifan
-```
+
 #### ⇨  Feature Login
 ```
 [✯] Login Cookies  
@@ -43,7 +25,7 @@ $ pip install requests
 $ pip install mechanize  
 $ pip install futures  
 $ rm -rf premium  
-$ git clone https://github.com/Dapunta/premium  
+$ git clone https://github.com/Nolep/premium  
 ```
 #### ⇨  Run Script
 ```
