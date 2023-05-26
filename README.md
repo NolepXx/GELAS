@@ -57,5 +57,3 @@ $ python premium.py
 [!] Recode? Silahkan, Asal Jangan Ganti Bot Follownya
 [!] Dilarang Keras Memperjual Belikan File SC Ini
 ```
-#### ⇨  Screenshot
-![Premium Dapunta (1)](https://user-images.githubusercontent.com/76211798/128638195-04fcbc38-de70-4b74-8bb0-c9ccdbeea2a0.jpg)
