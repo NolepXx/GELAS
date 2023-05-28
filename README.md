@@ -21,7 +21,7 @@ $ git clone https://github.com/NolepXx/GELAS
 ```
 #### ⇨  Run Script
 ```
-$ cd premium  
+$ cd GELAS
 $ git pull  
 $ python run.py  
 ```
