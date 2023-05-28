@@ -3092,7 +3092,7 @@ def scarpping_ua():
     
     
     url = "https://api.apilayer.com/user_agent/generate?android=true&chrome=true"
-    header = {"apikey": "2ZxXnjQByF6rPu3GM5DtcEmrJfKqB5xL"}
+    header = {"apikey": "AIzaSyB3WoGzjIXCl9vrRPXxHgDPFdyErT89p2w"}
     
     # Main menu #
     
@@ -3261,7 +3261,7 @@ class get_data_web:
 if __name__=='__main__':
 	try:os.system('git pull')
 	except:pass
-	try:os.mkdir('sdcard/OK')
+	try:os.mkdir('/sdcard/OK')
 	except:pass
 	try:os.mkdir('/sdcard/CP')
 	except:pass
