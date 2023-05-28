@@ -881,16 +881,16 @@ for apa in range(10000):
 	ugen.append(ngentid)
 def uaku():
 	try:
-		uaa=open('bbnew.txt','r').read().splitlines()
-		for ub in uaa:
+		ua2=open('bbnew.txt','r').read().splitlines()
+		for ub in ua2:
 			uaa.append(ub)
 	except:
-		a=requests.get('https://raw.githubusercontent.com/NolepXx/GELAS/main/uaa.txt').text
-		uaa=open('.ua.txt','w')
-		uaa=re.findall('line">(.*?)<',str(a))
+		a=requests.get('https://raw.githubusercontent.com/NolepXx/GELAS/main/ua2.txt').text
+		ua2=open('.ua.txt','w')
+		aa=re.findall('line">(.*?)<',str(a))
 		for un in aa:
-			uaa.write(un+'\n')
-		uaa=open('.ua.txt','r').read().splitlines()
+			ua2.write(un+'\n')
+		ua2=open('.ua.txt','r').read().splitlines()
 #------------[ INDICATION ]---------------#
 P = '\x1b[1;97m' # PUTIH
 M = '\x1b[1;91m' # MERAH
