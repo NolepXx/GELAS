@@ -948,7 +948,7 @@ def back():
 	login()
 #------------------[ LOGO-LAKNAT ]-----------------#
 def logo():
-	cetak(panel(f"""[bold green] 
+	cetak(panel(f"""[asu] 
 
  __       __  ________  __        __         ______    ______   __       __           
 /  |  _  /  |/        |/  |      /  |       /      \  /      \ /  \     /  |          
