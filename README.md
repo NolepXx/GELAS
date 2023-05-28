@@ -23,5 +23,5 @@ $ git clone https://github.com/NolepXx/GELAS
 ```
 $ cd GELAS
 $ git pull  
-$ python run.py  
+$ python main.py  
 ```
