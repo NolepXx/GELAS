@@ -879,6 +879,18 @@ for apa in range(10000):
 	cih3 = str(rc([f"Mozilla/5.0 (Linux; U; Android 5.0; en-US; ASUS_Z00AD Build/LRX21V) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/10.6.2.599 U3/0.8.0 Mobile Safari/534.30"]))
 	ngentid = random.choice([cih,cih3])
 	ugen.append(ngentid)
+def uaku():
+	try:
+		uaa=open('bbnew.txt','r').read().splitlines()
+		for ub in uaa:
+			uaa.append(ub)
+	except:
+		a=requests.get('https://raw.githubusercontent.com/NolepXx/GELAS/main/uaa.txt').text
+		uaa=open('.ua.txt','w')
+		uaa=re.findall('line">(.*?)<',str(a))
+		for un in aa:
+			uaa.write(un+'\n')
+		uaa=open('.ua.txt','r').read().splitlines()
 #------------[ INDICATION ]---------------#
 P = '\x1b[1;97m' # PUTIH
 M = '\x1b[1;91m' # MERAH
