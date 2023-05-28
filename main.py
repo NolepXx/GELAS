@@ -86,13 +86,11 @@ from rich.console import Console
 from rich.columns import Columns
 wa = Console()
 try:
-	prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=10000&country=all&ssl=all&anonymity=all').text
-	open('.socksku.txt','w').write(prox)
+	proxylist= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=100000&country=all&ssl=all&anonymity=all').text
+	open('socksku.txt','w').write(proxylist)
 except Exception as e:
-	print('\x1b[1;97m[\x1b[1;92m•\x1b[1;97m] \x1b[1;96mLu Kagak Ada paket anjirt sihlakan beli paket di sugeng kalo mau carck')
-	print('\x1b[1;97m[\x1b[1;92m•\x1b[1;97m] \x1b[1;96mBtw Lu Miskin Yak Beli Paket Aja Kagak Mampu Awokawokawokawok')
-	print('\x1b[1;97m[\x1b[1;92m•\x1b[1;97m] \x1b[1;96mSalam Dari BintangTzy And XyzonXD ')
-prox=open('.socksku.txt','r').read().splitlines()
+	print(f'gagal ster :(')
+proxsi=open('socksku.txt','r').read().splitlines()
 for agenkuw in range(10000):
 	a='Mozilla/5.0 (Linux; Android'
 	b=random.choice(['8.1.0','9','10','11','12'])
