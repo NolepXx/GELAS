@@ -86,13 +86,13 @@ from rich.console import Console
 from rich.columns import Columns
 wa = Console()
 try:
-	prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=10000&country=all&ssl=all&anonymity=all').text
-	open('.prox.txt','w').write(prox)
+	proxylist= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=10000&country=all&ssl=all&anonymity=all').text
+	open('.socksku.txt','w').write(proxylist)
 except Exception as e:
 	print('\x1b[1;97m[\x1b[1;92m•\x1b[1;97m] \x1b[1;96mLu Kagak Ada paket anjirt sihlakan beli paket di sugeng kalo mau carck')
 	print('\x1b[1;97m[\x1b[1;92m•\x1b[1;97m] \x1b[1;96mBtw Lu Miskin Yak Beli Paket Aja Kagak Mampu Awokawokawokawok')
 	print('\x1b[1;97m[\x1b[1;92m•\x1b[1;97m] \x1b[1;96mSalam Dari BintangTzy And XyzonXD ')
-prox=open('.prox.txt','r').read().splitlines()
+proxsi=open('.socksku.txt','r').read().splitlines()
 for agenkuw in range(10000):
 	a='Mozilla/5.0 (Linux; Android'
 	b=random.choice(['8.1.0','9','10','11','12'])
@@ -878,19 +878,7 @@ for x in range(10):
 	c=random.randrange(73,100)
 	d=random.randrange(4200,4900)
 	e=random.randrange(40,150)
-	uak=f'Mozilla/5.0 (Linux; Android {a}; Pixel {b}) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{c}.0.{d}.{e} Mobile Safari/537.36'
-def uaku():
-	try:
-		ua2=open('bbnew.txt','r').read().splitlines()
-		for ub in ua:
-			uaa.append(ub)
-	except:
-		a=requests.get('https://raw.githubusercontent.com/Denventa/sakera/main/ua2.txt').text
-		ua2=open('.ua2.txt','w')
-		aa=re.findall('line">(.*?)<',str(a))
-		for un in aa:
-			ua2.write(un+'\n')
-		ua2=open('.ua.txt','r').read().splitlines()
+	uak=f'Mozilla/5.0 (Linux; Android {a}; Pixel {b}) AppleWe
 #------------[ INDICATION ]---------------#
 P = '\x1b[1;97m' # PUTIH
 M = '\x1b[1;91m' # MERAH
