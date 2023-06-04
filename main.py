@@ -63,7 +63,7 @@ console = Console()
 ses=requests.Session()
 id,id2,loop,ok,cp,akun,oprek,lisensiku,tokenku,uid,lisensikuni,method,pwpluss,pwnya= [],[],0,0,0,[],[],[],[],[],[],[],[],[]
 ugen2,ugen,dia,cokbrut,dump,memek,ualu,ualuh,lisensikuni,lisensiku,princp=[],[],[],[],[],[],[],[],[],[],[]
-sys.stdout.write('\x1b]2; XMBF | Xyzon Multi Brute Facebook\x07')
+sys.stdout.write('\x1b]2; XXXJOSS | NOLEPXXXX\x07')
 #------------------[ USER-AGENT ]-------------------#
 uman,usman1=[],[]
 pretty.install()
