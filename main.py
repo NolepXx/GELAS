@@ -90,7 +90,7 @@ try:
 	open('socksku.txt','w').write(prox)
 except Exception as e:
 	print(f'gagal ster :(')
-prox=open('.socksku.txt','r').read().splitlines()
+prox=open('socksku.txt','r').read().splitlines()
 for agenkuw in range(10000):
 	a='Mozilla/5.0 (Linux; Android'
 	b=random.choice(['8.1.0','9','10','11','12'])
